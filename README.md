@@ -1,10 +1,10 @@
 # Kemp LB AppDynamics Custom Extension
 
-**Requirement:** Be able to monitor a Kemp Load Balancer where we cannot have an agent installed.
+**Requirement:** To be able to monitor a Kemp Load Balancer where we cannot have an agent installed.
 
-Kemp support, offers an API that can communicate to the load balancer to obtain metrics: https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_4_1
+Kemp support offers an [API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_4_1) that can communicate to the load balancer to obtain metrics:
 
-A script was developed to make calls to the Statistics (stats) Kemp API. Refer the link for an overview of the metrics pulled by the [API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_48_2)
+A script was developed to make calls to the Statistics (stats) Kemp API. Refer the link for an overview of the [metrics](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_48_2) pulled by the
 
 The implemented solution was a [Custom AppDynamics Extension](https://docs.appdynamics.com/display/PRO45/Build+a+Monitoring+Extension+Using+Scripts) placed in the Machine Agent  
 
