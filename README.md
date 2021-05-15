@@ -1,12 +1,10 @@
 # Kemp LB AppDynamics Custom Extension
 
-**Requirement:** To be able to monitor a Kemp Load Balancer where we cannot have an agent installed.
+**Requirement:** To be able to monitor a Kemp Load Balancer where we cannot have an AppDynamics agent installed.
 
-Kemp support offers an [API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_4_1) that can communicate to the load balancer to obtain metrics:
+Kemp Support offers an [API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_4_1) designed to allow remote access to the LoadMaster in a simple and consistent manner and obtain useful information about the status of the load balancer.
 
-A script was developed to make calls to the Statistics (stats) Kemp API. Refer the link for an overview of the [metrics](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_48_2) pulled by the
-
-The implemented solution was a [Custom AppDynamics Extension](https://docs.appdynamics.com/display/PRO45/Build+a+Monitoring+Extension+Using+Scripts) placed in the Machine Agent  
+A script was developed to make calls to the [Statistics (stats) Kemp API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_49_2) to obtain information and convert them into metrics readable by a [AppDynamics Monitoring Extension](https://docs.appdynamics.com/display/PRO45/Build+a+Monitoring+Extension+Using+Scripts) placed in an AppDynamics Machine Agent.
 
 The Extension Files provided and installed at <MachineAgentHome>/monitors are:
 * Function-LogWrite.ps1
@@ -14,7 +12,7 @@ The Extension Files provided and installed at <MachineAgentHome>/monitors are:
 *	monitor.xml
 *	runMonitor.bat
 * runMonitor.ps1
-* stats.xml
+* stats.xml - Kemp API response file sample.
 
 The extension calls the API every minute and reports the metrics to the AppDynamics controller.
 
