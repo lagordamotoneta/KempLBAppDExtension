@@ -17,7 +17,23 @@ The Extension Files provided and installed at <MachineAgentHome>/monitors are:
 * stats.xml
 
 The extension calls the API every minute and reports the metrics to the AppDynamics controller.
--	The metrics generated are the metrics that are part of the Stats API from Kemp, the ones in the extension are:
+
+## Define configuration file: monitor.properties
+* Properties file to define the Kemp API key, host (IP), the monitored IP’s and Ports and the metric path in the controller. **If the IP and Port properties are going to be used** then refer the below:
+  * kemp_lb_ip= MANDATORY
+  * kemp_api_key=MANDATORY
+  * monitored_vs_ips= MANDATORY, comma separated values
+  * monitored_vs_ports= OPTIONAL,comma separated values or ALL if empty
+  * monitored_rs_ips= MANDATORY,comma separated values
+  * monitored_rs_ports= OPTIONAL, comma separated values or ALL if empty.
+  * metric_path=Custom Metrics|Kemp LB|
+
+*  **If IP and Port are left empty for either Vs or Rs**, then ALL IPs and ALL PORTS will be retrieved.:
+
+## Metrics
+
+The metrics generated are the metrics that are part of the Stats API from Kemp, the ones in the extension are:
+
 * CPU
   * Metric Path: Custom Metrics|Kemp LB|CPU|Total
   * Metrics:
@@ -113,17 +129,3 @@ The extension calls the API every minute and reports the metrics to the AppDynam
     * BytesRead
     * BytesWritten
     * ConnsPerSec
-
-
-
-## Define configuration file: monitor.properties
-* Properties file to define the Kemp API key, host (IP), the monitored IP’s and Ports and the metric path in the controller. **If the IP and Port properties are going to be used** then refer the below:
-  * kemp_lb_ip= MANDATORY
-  * kemp_api_key=MANDATORY
-  * monitored_vs_ips= MANDATORY, comma separated values
-  * monitored_vs_ports= OPTIONAL,comma separated values or ALL if empty
-  * monitored_rs_ips= MANDATORY,comma separated values
-  * monitored_rs_ports= OPTIONAL, comma separated values or ALL if empty.
-  * metric_path=Custom Metrics|Kemp LB|
-
-*  **If IP and Port are left empty for either Vs or Rs**, then ALL IPs and ALL PORTS will be retrieved.
