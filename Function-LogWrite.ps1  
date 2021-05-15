@@ -1,0 +1,6 @@
+Function LogWrite
+{
+  Param ([string]$logstring)
+
+  Add-content $logfile -value $logstring
+}
