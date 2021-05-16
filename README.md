@@ -4,9 +4,9 @@
 
 Kemp Support offers an [API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_4_1) designed to allow remote access to the LoadMaster in a simple and consistent manner and obtain useful information about the status of the load balancer.
 
-A script was developed to make calls to the [Statistics (stats) Kemp API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_49_2) to obtain information and convert them into metrics readable by a [AppDynamics Monitoring Extension](https://docs.appdynamics.com/display/PRO45/Build+a+Monitoring+Extension+Using+Scripts) placed in an AppDynamics Machine Agent.
+A script was developed to make calls to the [Statistics (stats) Kemp API](https://support.kemptechnologies.com/hc/en-us/articles/203863435-RESTful-API#MadCap_TOC_49_2) to obtain information and convert it into metrics readable by a [AppDynamics Monitoring Extension](https://docs.appdynamics.com/display/PRO45/Build+a+Monitoring+Extension+Using+Scripts) placed in an AppDynamics Machine Agent.
 
-The Extension Files provided and installed at <MachineAgentHome>/monitors are:
+The Extension Files provided and installed at `<MachineAgentHome>/monitors` are:
 * Function-LogWrite.ps1
 * monitor.properties - Refer below the configuration needed.
 *	monitor.xml
@@ -26,7 +26,7 @@ The extension calls the API every minute and reports the metrics to the AppDynam
   * monitored_rs_ports= OPTIONAL, comma separated values or ALL if empty.
   * metric_path=Custom Metrics|Kemp LB|
 
-*  **If IP and Port are left empty for either Vs or Rs**, then ALL IPs and ALL PORTS will be retrieved.:
+*  **If IP and Port are left empty for either Vs or Rs**, then ALL IPs and ALL PORTS will be retrieved.
 
 ## Metrics
 
